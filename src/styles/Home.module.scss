@@ -1,0 +1,14 @@
+
+// .find {
+//   background-color: beige;
+// }
+
+.title {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.contacts {
+  // fazer com que exista um scroll dentro dele quando encher de itens
+  overflow-y: auto !important;
+}
