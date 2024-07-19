@@ -1,6 +1,8 @@
 import Head from "next/head";
 import styles from "@/styles/Home.module.scss";
 import NavigationBar from "@/components/NavigationBar";
+import Footer from "@/components/Footer";
+import InfoCard from "@/components/InfoCard";
 
 export default function About() {
   return (
@@ -16,28 +18,25 @@ export default function About() {
       </header>
       <main className={`${styles.main} container d-flex justify-content-center vh-100 vw-100`}>
         <div className="d-flex flex-column mt-3 col-8">
-          <h1>Sobre</h1>
-          <p>
-            Este site foi desenvolvido com a proposta de aprender melhor a utilizar o Next.js. 
+          <h1 className="text-center mb-3 mt-4">Sobre</h1>
+          <InfoCard 
+            title="Sobre o Aplicativo" 
+            description="Este site foi desenvolvido com a proposta de aprender melhor a utilizar o Next.js. 
             Então, o ele não tem serventia alguma, apenas foi feito para aprendizado. Optei
             por fazer uma espécie de CRUD simples para pegar a sintaxe do Next.js e acabei utilizando
-            o Firebase como banco de dados devido a sua facilidade de uso para pequenos projetos.
-          </p>
-          <h2>Funcionalidades</h2>
-          <ul>
-            <li>Adicionar novos contatos</li>
-            <li>Excluir contatos que não são mais necessários</li>
-            <li>Pesquisar contatos pelo nome</li>
-          </ul>
-          <h2>Sobre o Desenvolvedor</h2>
-          <p>
-            Este aplicativo foi desenvolvido por Jean Carlos.
-          </p>
+            o Firebase como banco de dados devido a sua facilidade de uso para pequenos projetos." 
+          />
+          <InfoCard 
+            title="Funcionalidades" 
+            description="Adicionar novos contatos, Excluir contatos que não são mais necessários, Pesquisar contatos pelo nome" 
+          />
+          <InfoCard 
+            title="Sobre o Desenvolvedor" 
+            description="Este aplicativo foi desenvolvido por Jean Carlos." 
+          />
         </div>
       </main>
-      <footer className="container-fluid d-flex justify-content-center align-items-center position-fixed bottom-0">
-        <p className="text-center">Developed by Jean Carlos</p>
-      </footer>
+      <Footer />
     </>
   );
 }

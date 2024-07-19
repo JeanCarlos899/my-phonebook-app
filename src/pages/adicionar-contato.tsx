@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import NavigationBar from "../components/NavigationBar";
 import RegisterContact from "../components/RegisterContact";
 import styles from "@/styles/Home.module.scss";
+import Footer from "@/components/Footer";
 
 export default function AdicionarContato() {
   return (
@@ -22,6 +23,7 @@ export default function AdicionarContato() {
         <h5>Cadastrar contato</h5>
         <RegisterContact />
       </main>
+      <Footer />
     </>
   );
 }

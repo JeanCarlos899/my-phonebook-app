@@ -6,6 +6,7 @@ import ContactCard from "@/components/ContactCard"; // Certifique-se de que o ca
 import { Contact } from "@/interfaces/interfaces";
 import { getContactsService } from "@/services/getContactsService";
 import NavigationBar from "@/components/NavigationBar";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   const [contacts, setContacts] = useState<Contact[]>([]);
@@ -67,9 +68,7 @@ export default function Home() {
           ))}
         </div>
       </main>
-      <footer className="container-fluid d-flex justify-content-center align-items-center position-fixed bottom-0">
-        <p className="text-center">Developed by Jean Carlos</p>
-      </footer>
+      <Footer />
     </>
   );
 }
