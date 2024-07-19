@@ -11,7 +11,7 @@ export default function NavigationBar() {
           <Link href="/adicionar-contato" className="btn btn-success">
             Adicionar contato
           </Link>
-          <Link href="/sobre" className="btn btn-secondary ms-2">
+          <Link href="/about" className="btn btn-secondary ms-2">
             Sobre
           </Link>
         </div>
