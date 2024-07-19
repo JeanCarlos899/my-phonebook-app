@@ -1,7 +1,9 @@
+import Head from "next/head";
+import "bootstrap/dist/css/bootstrap.min.css";
+import NavigationBar from "@/components/NavigationBar";
 import Footer from "@/components/Footer";
 import InfoCard from "@/components/InfoCard";
-import NavigationBar from "@/components/NavigationBar";
-import Head from "next/head";
+import styles from "@/styles/Home.module.scss";
 
 
 export default function About() {
@@ -16,7 +18,7 @@ export default function About() {
       <header>
         <NavigationBar />
       </header>
-      <main className={`container d-flex justify-content-center vh-100 vw-100`}>
+      <main className={`${styles.main} container d-flex justify-content-center vh-100 vw-100`}>
         <div className="d-flex flex-column mt-3 col-8">
           <h1 className="text-center mb-3 mt-4">Sobre</h1>
           <InfoCard 
