@@ -2,10 +2,10 @@ import Head from "next/head";
 import styles from "@/styles/Home.module.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useEffect, useState } from "react";
-import ContactCard from "./components/ContactCard";
+import ContactCard from "@/components/ContactCard"; // Certifique-se de que o caminho esteja correto
 import { Contact } from "@/interfaces/interfaces";
 import { getContactsService } from "@/services/getContactsService";
-import NavigationBar from "./components/NavigationBar";
+import NavigationBar from "@/components/NavigationBar";
 
 export default function Home() {
   const [contacts, setContacts] = useState<Contact[]>([]);
@@ -33,7 +33,7 @@ export default function Home() {
   };
 
   const filteredContacts = contacts.filter((contact) =>
-    contact.name && contact.name.toLowerCase().includes(searchTerm.toLowerCase())
+    contact.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
@@ -47,11 +47,9 @@ export default function Home() {
       <header>
         <NavigationBar />
       </header>
-      <main
-        className={`${styles.main} container d-flex justify-content-center vh-100 vw-100`}
-      >
-        <div className="d-flex flex-column mt-3 col-8">
-          <div className="mb-3">
+      <main className={`${styles.main} container d-flex justify-content-center vh-100 vw-100`}>
+        <div className="d-flex flex-column mt-3 col-8 gap-2">
+          <div>
             <input
               className="form-control"
               placeholder="Buscar"

@@ -1,5 +1,5 @@
 import styles from "@/styles/Home.module.scss";
-import { Contact } from "../../interfaces/interfaces";
+import { Contact } from "../interfaces/interfaces";
 import { deleteContactService } from "@/services/deleteContactService";
 
 interface ContactCardProps {

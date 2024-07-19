@@ -1,7 +1,7 @@
 import Head from "next/head";
 import "bootstrap/dist/css/bootstrap.min.css";
-import NavigationBar from "./components/NavigationBar";
-import RegisterContact from "./components/RegisterContact";
+import NavigationBar from "../components/NavigationBar";
+import RegisterContact from "../components/RegisterContact";
 import styles from "@/styles/Home.module.scss";
 
 export default function AdicionarContato() {
@@ -16,7 +16,9 @@ export default function AdicionarContato() {
       <header>
         <NavigationBar />
       </header>
-      <main className={`${styles.main} container d-flex flex-column gap-3 col-6 justify-content-center align-items-center vh-100`}>
+      <main
+        className={`${styles.main} container d-flex flex-column gap-3 col-6 justify-content-center align-items-center vh-100`}
+      >
         <h5>Cadastrar contato</h5>
         <RegisterContact />
       </main>

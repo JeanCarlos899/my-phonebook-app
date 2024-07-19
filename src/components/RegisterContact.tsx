@@ -1,5 +1,5 @@
 import React, { FormEvent, useState } from "react";
-import { saveContactService } from "../../services/saveContactService";
+import { saveContactService } from "../services/saveContactService";
 import Link from "next/link";
 
 export default function RegistrationForm() {
@@ -87,7 +87,9 @@ export default function RegistrationForm() {
         <button type="submit" className="btn btn-primary">
           Salvar
         </button>
-        <Link href="/" className="btn btn-light">Voltar</Link>
+        <Link href="/" className="btn btn-light">
+          Voltar
+        </Link>
       </form>
     </>
   );
