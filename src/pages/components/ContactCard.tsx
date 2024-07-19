@@ -1,43 +1,45 @@
 import styles from "@/styles/Home.module.scss";
-import { useEffect, useState } from "react";
 import { Contact } from "../../interfaces/interfaces";
-import { getContactsService } from "../../services/getContactsService";
+import { deleteContactService } from "@/services/deleteContactService";
 
-export default function ContactCard() {
-  const [contacts, setContacts] = useState<Contact[]>([]);
+interface ContactCardProps {
+  contact: Contact;
+  onDelete: (id: string) => void;
+}
 
-  useEffect(() => {
-    const fetchContacts = async () => {
-      try {
-        const contactsData = await getContactsService();
-        setContacts(contactsData);
-      } catch (error) {
-        console.error("Erro ao buscar contatos:", error);
-      }
-    };
-
-    fetchContacts();
-  }, []);
+const ContactCard: React.FC<ContactCardProps> = ({ contact, onDelete }) => {
+  const handleDelete = async () => {
+    try {
+      await deleteContactService(contact.id);
+      onDelete(contact.id);
+    } catch (error) {
+      console.error("Erro ao deletar contato:", error);
+    }
+  };
 
   return (
-    <div>
-      {contacts.map((contact) => (
-        <div
-          key={contact.id}
-          className={`${styles.card} card bg-light border-0 mb-3`}
-        >
-          <div className="card-body">
-            <div className="title">
-              <h5 className="card-title">{contact.name}</h5>
-            </div>
-            <div className="data">
-              <p className="card-text mb-0">{contact.email}</p>
-              <p className="card-text mb-0">{contact.phone}</p>
-              <p className="card-text mb-0">{contact.message}</p>
-            </div>
-          </div>
+    <div className={`${styles.card} card bg-light border-0 mb-2`}>
+      <div className="card-body">
+        <div className="d-flex align-items-center">
+          <h5 className="card-title mb-0">{contact.name}</h5>
+          <button
+            className="badge text-bg-danger ms-auto"
+            onClick={(event) => {
+              event.preventDefault();
+              handleDelete();
+            }}
+          >
+            Deletar
+          </button>
         </div>
-      ))}
+        <div className="data">
+          <p className="card-text mb-0">{contact.email}</p>
+          <p className="card-text mb-0">{contact.phone}</p>
+          <p className="card-text mb-0">{contact.message}</p>
+        </div>
+      </div>
     </div>
   );
-}
+};
+
+export default ContactCard;
